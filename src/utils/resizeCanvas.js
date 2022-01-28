@@ -12,7 +12,7 @@ const {Image} = require("canvas");
  */
  module.exports = function resizeCanvas(imageCanvas, width, height) {
     
-    let image = new Image(); // Have to create intermediary image, weird hack to make drawImage treat imageCanvas correctly 
+    let image = new Image(); // Have to create intermediary image, weird hack to make drawImage treats imageCanvas correctly 
     image.src = imageCanvas.toDataURL();
 
     let scaledCanvas = createCanvas(width, height);
