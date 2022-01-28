@@ -1,6 +1,7 @@
 //createCanvas is the function that creates the canvas object
-import canvas from "canvas";
+const canvas = require("canvas");
 const createCanvas = canvas.createCanvas;
+const {Image} = require("canvas");
 
 /**
  * resizeCanvas
@@ -9,10 +10,14 @@ const createCanvas = canvas.createCanvas;
  * @param {*} height desired height
  * @returns A canvas holding an image at the specific dimensions
  */
-export default function resizeCanvas(imageCanvas, width, height) {
-  let scaledCanvas = createCanvas(width, height);
-  let scaledContext = scaledCanvas.getContext("2d");
-  scaledContext.drawImage(imageCanvas, 0, 0, 580, 580, 0, 0, 256, 256);
+ module.exports = function resizeCanvas(imageCanvas, width, height) {
+    
+    let image = new Image(); // Have to create intermediary image, weird hack to make drawImage treat imageCanvas correctly 
+    image.src = imageCanvas.toDataURL();
 
-  return scaledCanvas;
+    let scaledCanvas = createCanvas(width, height);
+    let scaledContext = scaledCanvas.getContext("2d");
+    scaledContext.drawImage(image, 0, 0, imageCanvas.width, imageCanvas.height, 0, 0, width, height);
+
+    return scaledCanvas;
 }

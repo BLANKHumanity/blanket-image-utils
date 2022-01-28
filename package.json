@@ -13,7 +13,6 @@
     "dependencies": {
       "canvas": "^2.8.0",
       "imghash": "^0.0.9"
-    },
-    "type": "module"
+    }
   }
   

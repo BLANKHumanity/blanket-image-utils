@@ -1,7 +1,7 @@
-import canvasToPerceptualHash from "./utils/canvasToPerceptualHash.js";
-import resizeCanvas from "./utils/resizeCanvas.js";
+const canvasToPerceptualHash = require("./utils/canvasToPerceptualHash.js");
+const resizeCanvas = require("./utils/resizeCanvas.js");
 
-export default {
+module.exports = {
     canvasToPerceptualHash: canvasToPerceptualHash,
     resizeCanvas: resizeCanvas
 };
