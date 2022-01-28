@@ -1,1 +1,1 @@
-# node-image-utils
+# blanket-image-utils
