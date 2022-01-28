@@ -8,6 +8,6 @@ const imgHash = require("imghash");
  * @param {*} imageCanvas A canvas containing an image to be perceptually hashed
  * @returns a string containing a perceptual hash of the provided image
  */
- module.exports = async function canvasToPerceptuaHash(imageCanvas) {
+ module.exports = async function canvasToPerceptualHash(imageCanvas) {
   return " "+(await imgHash.hash(imageCanvas.toBuffer(), 16));
 }
